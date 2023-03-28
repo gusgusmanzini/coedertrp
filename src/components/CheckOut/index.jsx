@@ -214,7 +214,7 @@ function CheckOut() {
               </div>
               <div className="col-12">
                 <label htmlFor="phone" className="form-label">Teléfono</label>
-                <input onChange={handlePhone} value={phone} type="phone" className="form-control input"  id="phone" placeholder="+57 (XXX) XXX XX XX" required />
+                <input onChange={handlePhone} value={phone} type="phone" className="form-control input"  id="phone" placeholder="3124567890" required />
                 <div className="invalid-feedback">
                   Por favor ingrese su número de teléfono
                 </div>

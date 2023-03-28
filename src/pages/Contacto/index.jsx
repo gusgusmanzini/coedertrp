@@ -44,14 +44,6 @@ function Contacto() {
           <button type="button" className="btn btn-custom btn-lg btn-block mt-3">Enviar</button>
         </form>
       </div>
-      <div className="col-md-1 bg-white d-none">
-        <div className="social-icons">
-          <i className="fa fa-facebook" />
-          <i className="fa fa-twitter" />
-          <i className="fa fa-pinterest" />
-          <i className="fa fa-linkedin" />
-        </div>
-      </div>
     </div>
   </div>
 </section>

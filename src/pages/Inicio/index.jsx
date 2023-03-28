@@ -95,7 +95,7 @@ function Inicio() {
               <h4 className="my-0 fw-normal">Mundo Apple</h4>
             </div>
             <div className="card-body bg-warning" >
-              <img src={promo1} height="380" width="630" alt="comboamericanaconfritas" className="img-fluid" />
+              <img src={promo1} height="380" width="350" alt="comboamericanaconfritas" className="img-fluid" />
               <h1 className="card-title pricing-card-title mt-3 text-white">Desde $960.000</h1>
               <ul className="list-unstyled mt-3 mb-4">
                 <li>iPhone</li>

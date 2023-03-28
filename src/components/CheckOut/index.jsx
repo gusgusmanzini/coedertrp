@@ -9,7 +9,7 @@ import '../../assets/css/animaciones.css'
 
 
 function CheckOut() {
-    document.title = `JIMP iTech! Pago y envío`;
+    document.title = `JIMP iTech - Pago y envío`;
     const { cart, clearCart, itemsTotal, precioTotal } = useCartContext();
     const [OrderID, setOrderID] = useState();
     
@@ -151,7 +151,7 @@ function CheckOut() {
         return (
           <section id="carrito" className="py-2 text-center container slide-in-fwd-center">
             <div className="row py-lg-2">
-              <div><Badge bg="info" className="m-1"><h6>Su ID de compra ${OrderID} Total de articulos: {itemsTotal()}</h6></Badge><Badge className="m-3" bg="info"><h6> Costo Total: {precioTotal()} $</h6></Badge><div></div><div><Link to="/">Regresar al catálogo</Link></div> 
+              <div><Badge bg="primary" className="m-1"><h6>Su ID de compra ${OrderID} Total de articulos: {itemsTotal()}</h6></Badge><Badge className="m-3" bg="primary"><h6> Costo Total: {precioTotal()} $</h6></Badge><div></div><div><Link to="/">Regresar al catálogo</Link></div> 
               </div>
             </div>
           </section>
@@ -177,13 +177,13 @@ function CheckOut() {
                 <h6 className="my-0">{item.category} {item.name} x{item.cant}</h6>
                 <small className="text-muted">Descripción {item.description}</small>
               </div>
-              <span className="text-muted">{item.price}$</span>
+              <span className="text-muted">${item.price}</span>
             </li>
             </Container>
           ))}
           <li className="list-group-item d-flex justify-content-between lh-sm">
               <div>
-                <h6 className="my-0">Total: {precioTotal()}$</h6>
+                <h6 className="my-0">Total: ${precioTotal()} COP</h6>
               </div>
             </li>
           </ul>
@@ -198,25 +198,25 @@ function CheckOut() {
           <form className="needs-validation">
             <div className="row g-3">
               <div className="col-sm-12">
-                <label htmlFor="firstName" className="form-label">Nombres y apellidos</label>
-                <input onChange={handleNombre} value={nombre} type="text" className="form-control input" id="name" placeholder="Nombres y apellidos" required />
+                <label htmlFor="firstName" className="form-label">Nombre completo</label>
+                <input onChange={handleNombre} value={nombre} type="text" className="form-control input" id="name" placeholder="Nombres y Apellidos" required />
                 <div className="invalid-feedback">
                   Nombre requerido
                 </div>
               </div>
               
               <div className="col-12">
-                <label htmlFor="email" className="form-label">Email <span className="text-muted"></span></label>
-                <input onChange={handleEmail} value={email} type="email" className="form-control input" id="email" placeholder="Su@email" required />
+                <label htmlFor="email" className="form-label">Correo electrónico <span className="text-muted"></span></label>
+                <input onChange={handleEmail} value={email} type="email" className="form-control input" id="email" placeholder="Ingrese su email" required />
                 <div className="invalid-feedback">
                   Por favor introduzca un email válido.
                 </div>
               </div>
               <div className="col-12">
                 <label htmlFor="phone" className="form-label">Teléfono</label>
-                <input onChange={handlePhone} value={phone} type="phone" className="form-control input"  id="phone" placeholder="222446633" required />
+                <input onChange={handlePhone} value={phone} type="phone" className="form-control input"  id="phone" placeholder="+57 (XXX) XXX XX XX" required />
                 <div className="invalid-feedback">
-                  Por favor coloque su teléfono
+                  Por favor ingrese su número de teléfono
                 </div>
               </div>
             </div>

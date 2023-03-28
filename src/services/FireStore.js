@@ -1,19 +1,20 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, doc, getDoc, addDoc, query, where, collection, getDocs, Timestamp} from "firebase/firestore";
+import { getFirestore, doc, getDoc, addDoc, query, where, collection, getDocs, Timestamp} from "firebase/firestore/lite";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyDm2BvdDZ27d8sjCjN8vDH6TEIz8KVkKMM",
-    authDomain: "jimp-store.firebaseapp.com",
-    projectId: "jimp-store",
-    storageBucket: "jimp-store.appspot.com",
-    messagingSenderId: "1088499801538",
-    appId: "1:1088499801538:web:84bafe49408ad60ae84a5b",
+    apiKey: "AIzaSyAg0aPVir-UJUBq5gOJCQh27xKApQYW1U8",
+    authDomain: "itech-store-b28a3.firebaseapp.com",
+    projectId: "itech-store-b28a3",
+    storageBucket: "itech-store-b28a3.appspot.com",
+    messagingSenderId: "623308979406",
+    appId: "1:623308979406:web:55f27d643128aa8550249f"
   };
+  
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -24,8 +25,8 @@ export default fireStoreDb;
 // Obtengo todos los items de la DB
 
 export async function getAllItems() {
-    const miProducts = collection(fireStoreDb,"items");
-    const itemsSnapshot = await getDocs(miProducts);
+    const miColec = collection(fireStoreDb,'items');
+    const itemsSnapshot = await getDocs(miColec);
 
     return itemsSnapshot.docs.map(doc => {
         return {
@@ -35,8 +36,8 @@ export async function getAllItems() {
 })};
 
 export async function getItemsByCategory(category){
-    const miProducts = collection(fireStoreDb,'items');
-    const queryItem = query(miProducts, where("category", '==', category));
+    const miColec = collection(fireStoreDb,'items');
+    const queryItem = query(miColec, where("category", '==', category));
     const itemSnapshot = await getDocs(queryItem);
 
     return itemSnapshot.docs.map(doc => {
@@ -48,8 +49,8 @@ export async function getItemsByCategory(category){
 })};
 
 export async function getItem(id){
-    const miProducts = collection(fireStoreDb,'items');
-    const itemRef = doc(miProducts, id);
+    const miColec = collection(fireStoreDb,'items');
+    const itemRef = doc(miColec, id);
     const itemSnapshot = await getDoc(itemRef);
 
     
@@ -66,9 +67,8 @@ export async function createBuyOrder(orderData){
         ...orderData,
         date: buyTimeStamp
     };
-    const miProducts = collection(fireStoreDb,'buyOrders');
-    const orderDoc = await addDoc(miProducts, orderWithDate);
+    const miColec = collection(fireStoreDb,'buyOrders');
+    const orderDoc = await addDoc(miColec, orderWithDate);
     console.log("Orden lista con el id ",orderDoc.id);
     return orderDoc.id;   
 }
-

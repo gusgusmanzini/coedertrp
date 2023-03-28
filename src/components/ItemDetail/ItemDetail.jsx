@@ -45,7 +45,7 @@ if(detalle.picture === undefined){
               <><div className="cart-icon2"><FontAwesomeIcon icon={faCartShopping} size="3x" color="black" /><div className="mostrar-cantidadItem">{getItemQuantity(detalle.id)}</div></div></>
               :
               <><div className="cart-icon2"><FontAwesomeIcon icon={faCartShopping} size="3x" color="black" /><div className="mostrar-cantidadItem">0</div></div></>}</span>
-            <img src={detalle.picture} alt={detalle.name} className="img-fluid push-bit align-middle h-100" />
+            <img src={detalle.picture} alt={detalle.name} className="img-fluid push-bit align-middle h-100 rounded" />
             {estaEnCarrito(detalle.id) ?
             <Link to="/cart">
 <div className="card-img-overlay h-100 d-flex flex-row justify-content-end">

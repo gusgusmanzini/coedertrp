@@ -18,7 +18,7 @@ function CartView({ greeting }) {
     const handleVaciar = () => {
       const Toast = Swal.mixin({
         toast: true,
-        background: '#DFA822',
+        background: '#ff7300',
         showConfirmButton: false,
         timer: 2000,
         timerProgressBar: false,
@@ -30,7 +30,7 @@ function CartView({ greeting }) {
       
       Toast.fire({
         icon: 'success',
-        title: 'Carrito vaciado'
+        title: 'Has vaciado tu carrito'
       })
       clearCart();
         } 
@@ -43,7 +43,7 @@ function CartView({ greeting }) {
           }
          const Toast = Swal.mixin({
     toast: true,
-    background: '#DFA822',
+    background: '#ff7300',
     showConfirmButton: false,
     timer: 2000,
     timerProgressBar: false,
@@ -87,7 +87,7 @@ else {
   return (
     <section id="carrito" className="py-2 text-center container slide-in-fwd-center">
    <div className="row py-lg-2">
-    <div><Badge bg="info" className="m-1"><h6>Total de items: {itemsTotal()}</h6></Badge><Badge className="m-3" bg="info"><h6> Costo Total: {precioTotal()} $</h6></Badge><div></div><div><Link to="/">regresar al catálogo</Link></div> 
+    <div><Badge bg="primary" className="m-1"><h6>Total de items: {itemsTotal()}</h6></Badge><Badge className="m-3" bg="primary"><h6> Costo Total: $ {precioTotal()} COP</h6></Badge><div></div><div><Link to="/">regresar al catálogo</Link></div> 
      </div>
    </div>
    <div className="album py-5">
@@ -97,13 +97,13 @@ else {
           
         return (
               <Container id={itemCart.id} className={isActive ? 'bounce-out-top': null}  key={itemCart.id}>
-                <Card className="bg-warning shadow-lg p-3 mb-3 mr-2 ml-2 rounded text-center">
-                  <Card.Title>{itemCart.name} x{itemCart.cant}</Card.Title>
+                <Card className="bg-light shadow-lg p-3 mb-3 mr-2 ml-2 rounded text-center">
+                  <Card.Title className="fw-bolder">{itemCart.name} x{itemCart.cant}</Card.Title>
                   <Card.Img variant="top" src={itemCart.picture} alt={itemCart.name} />
                   <Card.Body>
                     <Card.Text>Categoría: {itemCart.category} </Card.Text>
-                    <Badge className="m-1" bg="success"><h6>x1 {itemCart.price} $</h6></Badge>
-                    <Badge className="m-1" bg="info"><h6>x{itemCart.cant} {itemCart.price * itemCart.cant} $</h6></Badge>
+                    <Badge className="m-1" bg="success"><h6>x1 ${itemCart.price} </h6></Badge>
+                    <Badge className="m-1" bg="primary"><h6>x{itemCart.cant} ${itemCart.price * itemCart.cant}</h6></Badge>
                     <Button onClick={handleRemove} className="btn btn-danger w-50 mt-3">Eliminar</Button>
                   </Card.Body>
                 </Card>

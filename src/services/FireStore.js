@@ -1,11 +1,9 @@
-// Import the functions you need from the SDKs you need
+
 import { initializeApp } from "firebase/app";
 import { getFirestore, doc, getDoc, addDoc, query, where, collection, getDocs, Timestamp} from "firebase/firestore/lite";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyAg0aPVir-UJUBq5gOJCQh27xKApQYW1U8",
     authDomain: "itech-store-b28a3.firebaseapp.com",
